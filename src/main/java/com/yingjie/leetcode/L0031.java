@@ -1,5 +1,7 @@
 package com.yingjie.leetcode;
 
+import java.util.Arrays;
+
 /**
  * <p>Title: L0031</p>
  * <p>Description: </p>
@@ -17,13 +19,36 @@ package com.yingjie.leetcode;
  **/
 public class L0031 {
 
-    // public void nextPermutation(int[] nums) {
-    //     int n = nums.length;
-    //     for (int i = nums.length - 1; i > 0; i--) {
-    //         for (int j = i -1; j > 0; j--) {
-    //             if ()
-    //         }
-    //     }
-    // }
+    public static void main(String[] args) {
+        new L0031().nextPermutation(new int[]{4,2,0,2,3,2,0});
+    }
+
+    public void nextPermutation(int[] nums) {
+        for (int i = nums.length - 1; i > 0; i--) {
+            for (int j = i - 1; j >= 0; j--) {
+                if (nums[j] < nums[i]) {
+                    swap(nums, i, j);
+                    reverse(nums, j + 1, nums.length - 1);
+                    return;
+                }
+            }
+        }
+        reverse(nums, 0, nums.length - 1);
+    }
+
+    public void reverse(int[] nums, int l, int r){
+        //双指针升序
+        while(l < r){
+            swap(nums, l, r);
+            l++;
+            r--;
+        }
+    }
+
+    public void swap(int[] nums, int i, int k){
+        int tmp = nums[i];
+        nums[i] = nums[k];
+        nums[k] = tmp;
+    }
 
 }
