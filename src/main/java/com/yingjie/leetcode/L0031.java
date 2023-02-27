@@ -1,7 +1,5 @@
 package com.yingjie.leetcode;
 
-import java.util.Arrays;
-
 /**
  * <p>Title: L0031</p>
  * <p>Description: </p>
@@ -16,28 +14,37 @@ import java.util.Arrays;
  * 给你一个整数数组 nums ，找出 nums 的下一个排列。
  *
  * 必须 原地 修改，只允许使用额外常数空间。
+ *
+ * <a href="https://leetcode.cn/problems/next-permutation/solutions/80560/xia-yi-ge-pai-lie-suan-fa-xiang-jie-si-lu-tui-dao-/">...</a>
  **/
 public class L0031 {
 
     public static void main(String[] args) {
-        new L0031().nextPermutation(new int[]{4,2,0,2,3,2,0});
+        int[] arr = new int[]{4,2,0,2,3,2,0};
+        new L0031().nextPermutation(arr);
     }
 
+
     public void nextPermutation(int[] nums) {
-        for (int i = nums.length - 1; i > 0; i--) {
-            for (int j = i - 1; j >= 0; j--) {
-                if (nums[j] < nums[i]) {
-                    swap(nums, i, j);
-                    reverse(nums, j + 1, nums.length - 1);
-                    return;
-                }
-            }
+        int i = nums.length - 2;
+        // 从后向前查找第一个相邻升序的元素对 (i, i+1)
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            i--;
         }
-        reverse(nums, 0, nums.length - 1);
+        if (i >= 0) {
+            int j = nums.length - 1;
+            // 因为是升序对所以在i的右边一定有大于nums[i]的数
+            while (nums[i] >= nums[j]) {
+                j--;
+            }
+            swap(nums, i, j);
+        }
+        // i + 1?
+        reverse(nums, i + 1, nums.length - 1);
     }
 
     public void reverse(int[] nums, int l, int r){
-        //双指针升序
+        // 双指针翻转
         while(l < r){
             swap(nums, l, r);
             l++;
@@ -50,5 +57,7 @@ public class L0031 {
         nums[i] = nums[k];
         nums[k] = tmp;
     }
+
+
 
 }
