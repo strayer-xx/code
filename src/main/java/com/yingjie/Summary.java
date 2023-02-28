@@ -26,12 +26,18 @@ public enum Summary {
 
     // 贪心
     TX(new Class[]{
-            L0122.class
+            L0122.class,
     }),
 
     // 回溯
     HX(new Class[]{
-            L0022.class
+            L0022.class,
+    }),
+
+    // 二分查找
+    EF(new Class[] {
+            L0033.class, // 搜索选择排序数组
+            L0153.class, // 寻找旋转排序数组中的最小值
     }),
 
     // else
