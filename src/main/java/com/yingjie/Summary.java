@@ -31,13 +31,16 @@ public enum Summary {
 
     // 回溯
     HX(new Class[]{
+            L0046.class, // 全排列
             L0022.class,
     }),
 
     // 二分查找
     EF(new Class[] {
+            L0034.class, // 在排序数组中查找元素的第一个和最后一个位置
             L0033.class, // 搜索选择排序数组
             L0153.class, // 寻找旋转排序数组中的最小值
+
     }),
 
     // else
