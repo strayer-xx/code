@@ -47,6 +47,8 @@ public enum Summary {
     ELSE(new Class[]{
             L0021.class,
             L0031.class, // imp
+            L0048.class,
+            L0049.class,
     });
 
 
