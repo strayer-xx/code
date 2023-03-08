@@ -49,6 +49,7 @@ public enum Summary {
             L0031.class, // imp
             L0048.class,
             L0049.class,
+            L0055.class,
     });
 
 
