@@ -13,6 +13,8 @@ import com.yingjie.leetcode.*;
 public enum Summary {
     // 动态规划
     DP(new Class[]{
+            L0062.class, // 不同路径
+            L0064.class, // 最小路径和
             L0343.class,
             L0096.class,
             L0416.class,
@@ -22,6 +24,7 @@ public enum Summary {
             L0053.class,
             L0122.class, // 买卖股票的最佳时机 II
             L0714.class, // 买卖股票的最佳时机含手续费
+
     }),
 
     // 贪心
