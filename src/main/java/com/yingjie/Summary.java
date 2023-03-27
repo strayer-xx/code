@@ -1,6 +1,7 @@
 package com.yingjie;
 
 import com.yingjie.leetcode.*;
+import com.yingjie.leetcode.ms.M080007;
 
 /**
  * <p>Title: Summary</p>
@@ -46,9 +47,15 @@ public enum Summary {
 
     }),
 
+    // 排列组合
+    PLZH(new Class[]{
+            M080007.class,
+            M080007.class, // imp
+    }),
+
     // else
     ELSE(new Class[]{
-            L0021.class,
+            L0021.class, // imp
             L0031.class, // imp
             L0048.class,
             L0049.class,

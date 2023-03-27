@@ -4,9 +4,12 @@ package com.yingjie.leetcode;
  * <p>Title: L0005</p>
  * <p>Description: 最长回文串</p>
  *
- * @author LiuYingJie
- * @version 1.0
- * @date 2022/4/16 20:29
+ * 给你一个字符串 s，找到 s 中最长的回文子串。
+ * 如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。
+ *
+ * 输入：s = "babad"
+ * 输出："bab"
+ * 解释："aba" 同样是符合题意的答案。
  */
 public class L0005 {
 
@@ -25,6 +28,7 @@ public class L0005 {
         int n = s.length();
         boolean[][] dp = new boolean[n][n];
         String ans = "";
+        // 主要理解为什么要用长度去循环
         for (int l = 0; l < n; ++l) {
             for (int i = 0; i + l < n; ++i) {
                 int j = i + l;
