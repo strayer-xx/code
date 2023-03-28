@@ -1,7 +1,10 @@
 package com.yingjie;
 
 import com.yingjie.leetcode.*;
-import com.yingjie.leetcode.ms.M080007;
+import com.yingjie.leetcode.bag.L0416;
+import com.yingjie.leetcode.bag.L0494;
+import com.yingjie.leetcode.bag.L1049;
+import com.yingjie.leetcode.permutation.M080007;
 
 /**
  * <p>Title: Summary</p>

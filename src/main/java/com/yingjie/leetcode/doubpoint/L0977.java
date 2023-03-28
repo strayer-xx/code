@@ -1,4 +1,4 @@
-package com.yingjie.leetcode;
+package com.yingjie.leetcode.doubpoint;
 
 /**
  * <p>Title: L0977</p>

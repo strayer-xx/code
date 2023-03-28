@@ -1,4 +1,4 @@
-package com.yingjie.leetcode.ms;
+package com.yingjie.leetcode.permutation;
 
 import java.util.ArrayList;
 import java.util.Arrays;

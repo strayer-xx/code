@@ -1,4 +1,4 @@
-package com.yingjie.leetcode;
+package com.yingjie.leetcode.palindrome;
 
 /**
  * <p>Title: L0674</p>

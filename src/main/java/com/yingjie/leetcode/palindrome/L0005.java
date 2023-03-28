@@ -1,4 +1,4 @@
-package com.yingjie.leetcode;
+package com.yingjie.leetcode.palindrome;
 
 /**
  * <p>Title: L0005</p>
@@ -30,6 +30,7 @@ public class L0005 {
         String ans = "";
         // 主要理解为什么要用长度去循环
         for (int l = 0; l < n; ++l) {
+            // 注意此处跳出循环的判断
             for (int i = 0; i + l < n; ++i) {
                 int j = i + l;
                 if (l == 0) {

@@ -1,4 +1,4 @@
-package com.yingjie.leetcode;
+package com.yingjie.leetcode.bag;
 
 /**
  * <p>Title: L0416</p>
