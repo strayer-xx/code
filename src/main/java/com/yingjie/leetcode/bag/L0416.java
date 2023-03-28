@@ -35,7 +35,7 @@ public class L0416 {
         for (int i = 1; i < nums.length; i++) {
             for (int j = 0; j <= target; j++) {
                 if (j >= nums[i]) {
-                    dp[i][j] = dp[i - 1][j] | dp[i - 1][j - nums[i]];
+                    dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]];
                 } else {
                     dp[i][j] = dp[i - 1][j];
                 }

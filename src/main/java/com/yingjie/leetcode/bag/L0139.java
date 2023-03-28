@@ -1,4 +1,4 @@
-package com.yingjie.leetcode;
+package com.yingjie.leetcode.bag;
 
 import java.util.HashSet;
 import java.util.List;
