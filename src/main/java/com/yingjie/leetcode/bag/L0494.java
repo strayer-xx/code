@@ -2,13 +2,14 @@ package com.yingjie.leetcode.bag;
 
 /**
  * <p>Title: L0494</p>
- * <p>Description: </p>
+ * <p>Description: 目标和</p>
  *
  * 给你一个整数数组 nums 和一个整数 target 。
  * 向数组中的每个整数前添加 '+' 或 '-' ，然后串联起所有整数，可以构造一个 表达式 ：
  * 例如，nums = [2, 1] ，可以在 2 之前添加 '+' ，在 1 之前添加 '-' ，然后串联起来得到表达式 "+2-1" 。
  * 返回可以通过上述方法构造的、运算结果等于 target 的不同 表达式 的数目。
  *
+ * <a href="https://leetcode.cn/problems/target-sum/">...</a>
  */
 public class L0494 {
 
@@ -39,6 +40,9 @@ public class L0494 {
 
     /**
      * 动态规划-01背包
+     * 记数组的元素和为 sum，添加 - 号的元素之和为 neg，则其余添加 + 的元素之和为 sum−neg，得到的表达式的结果为
+     *
+     * (sum−neg)−neg=sum−2neg=target
      * 定义二维数组 dp，其中 dp[i][j] 表示在数组 nums 的前 i个数中选取元素，
      * 使得这些元素之和等于 j 的方案数
      */
@@ -55,11 +59,10 @@ public class L0494 {
         int[][] dp = new int[n + 1][neg + 1];
         dp[0][0] = 1;
         for (int i = 1; i <= n; i++) {
-            int num = nums[i - 1];
             for (int j = 0; j <= neg; j++) {
                 dp[i][j] = dp[i - 1][j];
-                if (j >= num) {
-                    dp[i][j] += dp[i - 1][j - num];
+                if (j >= nums[i - 1]) {
+                    dp[i][j] += dp[i - 1][j - nums[i - 1]];
                 }
             }
         }

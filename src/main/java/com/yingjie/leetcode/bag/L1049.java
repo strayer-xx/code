@@ -41,7 +41,7 @@ public class L1049 {
             sum += stones[i];
         }
         int target = sum / 2;
-        int[][] dp = new int[n + 1][target + 1];
+        int[][] dp = new int[n][target + 1];
         for (int i = 0; i < n; i++){
             int num = stones[i];
             for (int j = 0; j <= target; j++) {

@@ -16,43 +16,36 @@ public class M080008 {
         System.out.println(Arrays.toString(new M080008().permutation("eqq")));
     }
 
+    private char[] sChar;
+    private boolean[] used;
+    private List<String> res = new ArrayList<>();
+    private StringBuilder path = new StringBuilder();
+
     public String[] permutation(String S) {
-        List<String> res = new ArrayList<String>();
         int len = S.length();
         if (len == 0) return new String[0];
-        boolean[] used = new boolean[len];
-        char[] sChar = S.toCharArray();
+        used = new boolean[len];
+        sChar = S.toCharArray();
 
-        StringBuilder path = new StringBuilder(len);
 
         // 排序是为了后面的剪枝
         Arrays.sort(sChar);
 
-        dfs(res, sChar, len, path, 0, used);
+        dfs(0);
         return res.toArray(new String[0]);
     }
 
     /**
-     * @param res 结果集
-     * @param sChar 输入字符数组
-     * @param len 字符数组长度
-     * @param path 根结点到任意结点的路径
      * @param depth 当前树的深度
-     * @param used 使用标记数组
      */
-    private void dfs(List<String> res
-            , char[] sChar
-            , int len
-            , StringBuilder path
-            , int depth
-            , boolean[] used) {
+    private void dfs(int depth) {
         // 到达叶子结点
-        if (depth == len) {
+        if (depth == sChar.length) {
             res.add(path.toString());
             return;
         }
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < sChar.length; i++) {
             if (!used[i]) {
                 // 根据已排序字符数组, 剪枝（**关键**）
                 // 理解!used[i-1]的作用
@@ -64,7 +57,7 @@ public class M080008 {
                 }
                 path.append(sChar[i]);
                 used[i] = true;
-                dfs(res, sChar, len, path, depth+1, used);
+                dfs(depth + 1);
                 path.deleteCharAt(depth);
                 used[i] = false;
             }

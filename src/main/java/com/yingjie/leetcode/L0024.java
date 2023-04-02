@@ -2,11 +2,13 @@ package com.yingjie.leetcode;
 
 /**
  * <p>Title: L0024</p>
- * <p>Description: </p>
+ * <p>Description: 两两交换链表中的节点</p>
  *
- * @author LiuYingJie
- * @version 1.0
- * @date 2022/11/30 23:50
+ * 给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。
+ * 你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
+ *
+ * 输入：head = [1,2,3,4]
+ * 输出：[2,1,4,3]
  */
 public class L0024 {
 

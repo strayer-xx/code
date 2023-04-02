@@ -13,6 +13,8 @@ public class L0416 {
 
     /**
      * 转化为01背包问题，从nums中取数，看是否有等于sum/2的结果
+     * dp[i][j] 表示从数组的 [0,i] 下标范围内选取若干个正整数（可以是 0 个），
+     * 是否存在一种选取方案使得被选取的正整数的和等于 j。初始时，dp 中的全部元素都是 false
      */
     public boolean canPartition(int[] nums) {
         if (nums.length < 2) {
@@ -26,8 +28,6 @@ public class L0416 {
             return false;
         }
         int target = sum >>> 1;
-        // dp[i][j] 表示从数组的 [0,i] 下标范围内选取若干个正整数（可以是 0 个），
-        // 是否存在一种选取方案使得被选取的正整数的和等于 j。初始时，dp 中的全部元素都是 false
         boolean[][] dp = new boolean[nums.length][target + 1];
         if (nums[0] <= target) {
             dp[0][nums[0]] = true;
@@ -43,6 +43,7 @@ public class L0416 {
         }
         return dp[nums.length - 1][target];
     }
+
 
     /**
      * 计算 dp 的过程中，每一行的 dp 值都只与上一行的 dp 值有关，
