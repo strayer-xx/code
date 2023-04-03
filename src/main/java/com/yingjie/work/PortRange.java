@@ -27,29 +27,31 @@ public class PortRange {
             portExceptions = Arrays.stream(exclude.split(","))
                     .mapToInt(Integer::parseInt)
                     .toArray();
-            // 逻辑处理
 
-            // 将例外端口加入列表中
-            int[] allPorts = new int[portExceptions.length + 2];
-            allPorts[0] = portStart - 1;
-            allPorts[allPorts.length - 1] = portEnd + 1;
-            System.arraycopy(portExceptions, 0, allPorts, 1, portExceptions.length);
-            Arrays.sort(allPorts);
-
-            // 初始化端口范围的起点为1
-            int startPort = portStart;
-
-            // 遍历端口例外列表，根据差值来划分端口范围
-            for (int port : allPorts) {
-                if (port - startPort > 1) {
-                    System.out.println(startPort + "-" + (port - 1));
-                }
-                // 更新起点
-                startPort = port + 1;
-            }
+            solution(portStart, portEnd, portExceptions);
 
         }
+    }
 
+    public static void solution(int portStart, int portEnd ,int[] portExceptions) {
+        // 将例外端口加入列表中
+        int[] allPorts = new int[portExceptions.length + 2];
+        allPorts[0] = portStart - 1;
+        allPorts[allPorts.length - 1] = portEnd + 1;
+        System.arraycopy(portExceptions, 0, allPorts, 1, portExceptions.length);
+        Arrays.sort(allPorts);
+
+        // 初始化端口范围的起点为1
+        int startPort = portStart;
+
+        // 遍历端口例外列表，根据差值来划分端口范围
+        for (int port : allPorts) {
+            if (port - startPort > 1) {
+                System.out.println(startPort + "-" + (port - 1));
+            }
+            // 更新起点
+            startPort = port + 1;
+        }
 
     }
 }
