@@ -49,6 +49,9 @@ public class PortRange {
             if (port - startPort > 1) {
                 System.out.println(startPort + "-" + (port - 1));
             }
+            if (port -startPort == 1) {
+                System.out.println(startPort);
+            }
             // 更新起点
             startPort = port + 1;
         }
