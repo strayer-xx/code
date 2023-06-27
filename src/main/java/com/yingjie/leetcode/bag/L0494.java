@@ -20,7 +20,7 @@ public class L0494 {
     private int conut = 0;
 
     /**
-     * BFS
+     * DFS
      */
     public int findTargetSumWays(int[] nums, int target) {
         dfs(nums, 0, target, 0);
