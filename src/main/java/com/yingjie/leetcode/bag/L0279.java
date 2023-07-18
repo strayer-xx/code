@@ -3,11 +3,17 @@ package com.yingjie.leetcode.bag;
 /**
  * <p>Title: L0279</p>
  * <p>Description: </p>
- *
- * @author LiuYingJie
- * @version 1.0
- * @date 2023/3/29 0:32
+ * 给你一个整数 n ，返回 和为 n 的完全平方数的最少数量 。
+ * 完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。
+ * 输入：n = 13
+ * 输出：2
+ * 解释：13 = 4 + 9
+ * 链接：<a href="https://leetcode.cn/problems/perfect-squares">...</a>
  */
-// todo
 public class L0279 {
+
+    public int numSquares(int n) {
+
+        return 0;
+    }
 }

@@ -11,6 +11,10 @@ package com.yingjie.leetcode.bag;
  */
 public class L0416 {
 
+    public static void main(String[] args) {
+        System.out.println(new L0416().canPartition(new int[]{1,5,11,5}));
+    }
+
     /**
      * 转化为01背包问题，从nums中取数，看是否有等于sum/2的结果
      * dp[i][j] 表示从数组的 [0,i] 下标范围内选取若干个正整数（可以是 0 个），
@@ -29,6 +33,7 @@ public class L0416 {
         }
         int target = sum >>> 1;
         boolean[][] dp = new boolean[nums.length][target + 1];
+        dp[0][0] = true;
         if (nums[0] <= target) {
             dp[0][nums[0]] = true;
         }

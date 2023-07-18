@@ -1,4 +1,4 @@
-package com.yingjie.leetcode;
+package com.yingjie.leetcode.linkedlist;
 
 /**
  * <p>Title: L0024</p>
