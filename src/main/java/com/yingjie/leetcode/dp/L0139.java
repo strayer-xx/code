@@ -1,4 +1,4 @@
-package com.yingjie.leetcode.bag;
+package com.yingjie.leetcode.dp;
 
 import java.util.HashSet;
 import java.util.List;
@@ -7,8 +7,7 @@ import java.util.Set;
 /**
  * <p>Title: L0139</p>
  * <p>Description: 单词拆分</p>
- *
- *给你一个字符串 s 和一个字符串列表 wordDict 作为字典。请你判断是否可以利用字典中出现的单词拼接出 s 。
+ * 给你一个字符串 s 和一个字符串列表 wordDict 作为字典。请你判断是否可以利用字典中出现的单词拼接出 s 。
  *
  * 输入: s = "leetcode", wordDict = ["leet", "code"]
  * 输出: true

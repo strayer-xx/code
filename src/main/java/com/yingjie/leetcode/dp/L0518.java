@@ -1,7 +1,7 @@
-package com.yingjie.leetcode.bag;
+package com.yingjie.leetcode.dp;
 
 /**
- * <p>Title: L0474</p>
+ * <p>Title: L0518</p>
  * <p>Description: </p>
  *
  * @author LiuYingJie
@@ -9,5 +9,5 @@ package com.yingjie.leetcode.bag;
  * @date 2023/3/29 0:32
  */
 // todo
-public class L0474 {
+public class L0518 {
 }

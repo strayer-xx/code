@@ -1,4 +1,4 @@
-package com.yingjie.leetcode.bag;
+package com.yingjie.leetcode.dp;
 
 /**
  * <p>Title: L0122</p>
@@ -18,8 +18,8 @@ package com.yingjie.leetcode.bag;
 public class L0122 {
 
     /**
-     * dp[i][j] 表示到下标为 i 的这一天，持股状态为 j 时，我们手上拥有的最大现金数
-     * 状态j分为0和1两种，分别是第天持有和不持有股票
+     * dp[i][j] 表示到下标为 i 的这一天，持股状态为 j 时，我们手上拥有的最大收益
+     * 状态j分为0和1两种，分别是第 i 天不持有和持有股票
      */
     public int maxProfit(int[] prices) {
         int n = prices.length;
@@ -36,7 +36,7 @@ public class L0122 {
 
     /**
      * 贪心算法
-     * 对于 「今天的股价 - 昨天的股价」，得到的结果有 3 种可能：① 正数，② 000，③负数。贪心算法的决策是： 只加正数 。
+     * 对于 「今天的股价 - 昨天的股价」，得到的结果有 3 种可能：① 正数，② 0，③负数。贪心算法的决策是： 只加正数 。
      */
     public int maxProfit2(int[] prices) {
         int len = prices.length;

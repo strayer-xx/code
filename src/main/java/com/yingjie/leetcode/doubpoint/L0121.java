@@ -1,6 +1,6 @@
 package com.yingjie.leetcode.doubpoint;
 
-import com.yingjie.leetcode.bag.L0122;
+import com.yingjie.leetcode.dp.L0122;
 
 /**
  * <p>Title: L0121</p>
