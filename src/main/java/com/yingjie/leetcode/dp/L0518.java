@@ -1,13 +1,45 @@
 package com.yingjie.leetcode.dp;
 
+import java.util.Arrays;
+
 /**
  * <p>Title: L0518</p>
- * <p>Description: </p>
+ * <p>Description:  零钱兑换 II</p>
  *
- * @author LiuYingJie
- * @version 1.0
- * @date 2023/3/29 0:32
+ * 给你一个整数数组 coins 表示不同面额的硬币，另给一个整数 amount 表示总金额。
+ * 请你计算并返回可以凑成总金额的硬币组合数。如果任何硬币组合都无法凑出总金额，返回 0 。
+ * 假设每一种面额的硬币有无限个。
+ * 题目数据保证结果符合 32 位带符号整数。
+ *
+ * 输入：amount = 5, coins = [1, 2, 5]
+ * 输出：4
+ * 解释：有四种方式可以凑成总金额：
+ * 5=5
+ * 5=2+2+1
+ * 5=2+1+1+1
+ * 5=1+1+1+1+1
+ *
+ * 链接：<a href="https://leetcode.cn/problems/coin-change-ii">...</a>
  */
-// todo
 public class L0518 {
+
+    public int change(int amount, int[] coins) {
+        if(coins.length == 0)
+            return 0;
+
+        //dp[j]代表当钱包的总价值为j时，
+        int[] dp = new int[amount + 1];
+        dp[0] = 1;
+
+        //i代表可以使用的硬币索引，i=2代表只在第0个，第1个，第2个这三个硬币中选择硬币
+        for (int coin : coins) {
+            for (int j = coin; j <= amount; j++) {
+                if (dp[j - coin] != 0) {
+                    dp[j] = dp[j] + dp[j - coin];
+                }
+            }
+        }
+        return dp[amount];
+    }
+
 }
