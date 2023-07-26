@@ -5,7 +5,7 @@ package com.yingjie.leetcode.linkedlist;
  * <p>Description: 排序链表</p>
  *
  * 给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
- *
+ *  <a href="https://leetcode.cn/problems/sort-list/">...</a>
  */
 public class L0148 {
 
@@ -18,7 +18,10 @@ public class L0148 {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
-    // 归并排序（链表常用的排序方法）
+    /**
+     * 归并排序（链表常用的排序方法）
+     * 重点掌握
+     */
     public ListNode sortList(ListNode head) {
         return mergeSort(head);
     }
@@ -65,6 +68,9 @@ public class L0148 {
         return head.next;
     }
 
+    /**
+     * 快排版本
+     */
     public ListNode sortList1(ListNode head) {
         if(head == null || head.next == null) return head;
         // 没有条件，创造条件。自己添加头节点，最后返回时去掉即可。
@@ -72,20 +78,25 @@ public class L0148 {
         newHead.next = head;
         return quickSort(newHead,null);
     }
+
     // 带头结点的链表快速排序
     private ListNode quickSort(ListNode head,ListNode end){
         if (head == end || head.next == end || head.next.next == end) return head;
         // 将小于划分点的值存储在临时链表中
         ListNode tmpHead = new ListNode(-1);
-        // partition为划分点，p为链表指针，tp为临时链表指针
-        ListNode partition = head.next, p = partition, tp = tmpHead;
+        // partition为划分点
+        ListNode partition = head.next;
+        // p为原链表指针
+        ListNode p = partition;
+        // tp为临时链表指针
+        ListNode tp = tmpHead;
         // 将小于划分点的结点放到临时链表中
         while (p.next != end){
             if (p.next.val < partition.val){
                 tp.next = p.next;
                 tp = tp.next;
                 p.next = p.next.next;
-            }else {
+            } else {
                 p = p.next;
             }
         }
