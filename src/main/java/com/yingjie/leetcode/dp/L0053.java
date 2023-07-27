@@ -3,17 +3,19 @@ package com.yingjie.leetcode.dp;
 /**
  * <p>Title: L0053</p>
  * <p>Description: 最大子序和</p>
+ *
+ * 给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+ * 子数组 是数组中的一个连续部分。
+ *
  * 1 <= nums.length <= 105
  * -104 <= nums[i] <= 104
  *
- * @author LiuYingJie
- * @version 1.0
- * @date 2022/4/16 19:31
+ * <a href="https://leetcode.cn/problems/maximum-subarray/">...</a>
  */
 public class L0053 {
     public static void main(String[] args) {
-        int[] nums1 = {-2,1,-3,4,-1,2,1,-5,4};
-        int[] nums2 = {5,4,-1,7,8};
+        int[] nums1 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int[] nums2 = {5, 4, -1, 7, 8};
         L0053 solution = new L0053();
         System.out.println(solution.maxSubArray(nums2));
 
