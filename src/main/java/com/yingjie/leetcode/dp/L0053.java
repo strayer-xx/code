@@ -11,13 +11,15 @@ package com.yingjie.leetcode.dp;
  * -104 <= nums[i] <= 104
  *
  * <a href="https://leetcode.cn/problems/maximum-subarray/">...</a>
+ *
+ * Next:{@link L0152}
  */
 public class L0053 {
     public static void main(String[] args) {
         int[] nums1 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         int[] nums2 = {5, 4, -1, 7, 8};
         L0053 solution = new L0053();
-        System.out.println(solution.maxSubArray(nums2));
+        System.out.println(solution.maxSubArray(nums1));
 
     }
 
@@ -26,7 +28,7 @@ public class L0053 {
      */
     public int maxSubArray(int[] nums) {
         int n = nums.length;
-        int[] dp = new int[n + 1];
+        int[] dp = new int[n];
         int max = nums[0];
         dp[0] = nums[0];
         for (int i = 1; i < n; i++) {
