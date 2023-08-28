@@ -19,7 +19,7 @@ import java.util.PriorityQueue;
 public class L0215 {
 
     /**
-     * 利用优先队列的二叉堆
+     * 利用优先队列的二叉堆，时间复杂度 O(nlogK)
      */
     public int findKthLargest(int[] nums, int k) {
         int len = nums.length;

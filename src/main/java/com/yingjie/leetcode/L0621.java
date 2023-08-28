@@ -1,5 +1,7 @@
 package com.yingjie.leetcode;
 
+import java.util.Arrays;
+
 /**
  * <p>Title: L0621</p>
  * <p>Description: 任务调度器</p>
@@ -25,6 +27,21 @@ public class L0621 {
      * <a href="https://leetcode.cn/problems/task-scheduler/solutions/509866/jian-ming-yi-dong-de-javajie-da-by-lan-s-jfl9/"/>
      */
     public int leastInterval(char[] tasks, int n) {
-
+        int[] buckets = new int[26];
+        for(int i = 0; i < tasks.length; i++){
+            buckets[tasks[i] - 'A']++;
+        }
+        Arrays.sort(buckets);
+        int maxTimes = buckets[25];
+        int maxCount = 1;
+        for(int i = 25; i >= 1; i--){
+            if(buckets[25] == buckets[i - 1])
+                maxCount++;
+            else
+                break;
+        }
+        // 重点在这个公式
+        int res = (maxTimes - 1) * (n + 1) + maxCount;
+        return Math.max(res, tasks.length);
     }
 }

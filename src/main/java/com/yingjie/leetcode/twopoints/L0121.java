@@ -1,4 +1,4 @@
-package com.yingjie.leetcode.doubpoint;
+package com.yingjie.leetcode.twopoints;
 
 import com.yingjie.leetcode.dp.L0122;
 
