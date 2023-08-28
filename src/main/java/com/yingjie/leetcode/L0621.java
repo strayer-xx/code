@@ -14,9 +14,16 @@ package com.yingjie.leetcode;
  * 输出：8
  * 解释：A -> B -> (待命) -> A -> B -> (待命) -> A -> B
  *      在本示例中，两个相同类型任务之间必须间隔长度为 n = 2 的冷却时间，而执行一个任务只需要一个单位时间，所以中间出现了（待命）状态。
+ *
+ * <a href="https://leetcode.cn/problems/task-scheduler/description/"/>
+ *
  */
 public class L0621 {
 
+    /**
+     * 题解
+     * <a href="https://leetcode.cn/problems/task-scheduler/solutions/509866/jian-ming-yi-dong-de-javajie-da-by-lan-s-jfl9/"/>
+     */
     public int leastInterval(char[] tasks, int n) {
 
     }
