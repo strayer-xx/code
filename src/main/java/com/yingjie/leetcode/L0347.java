@@ -1,9 +1,6 @@
 package com.yingjie.leetcode;
 
-
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * 347. 前 K 个高频元素
