@@ -11,14 +11,38 @@ package com.yingjie.leetcode.dfs;
  * 岛屿中没有“湖”（“湖” 指水域在岛屿内部且不和岛屿周围的水相连）。
  * 格子是边长为 1 的正方形。网格为长方形，且宽度和高度均不超过 100 。计算这个岛屿的周长。
  *
- *
- *
  * <a href="https://leetcode.cn/problems/island-perimeter/">...</a>
- *
  */
 public class L0463 {
 
-    public int largestIsland(int[][] grid) {
+    public int islandPerimeter(int[][] grid) {
+        int res = 0;
+        for (int r = 0; r < grid.length; r++) {
+            for (int c = 0; c < grid[0].length; c++) {
+                if (grid[r][c] == 1) {
+                    int a = area(grid, r, c);
+                    res = Math.max(res, a);
+                }
+            }
+        }
+        return res;
+    }
 
+    private int area(int[][] grid, int l, int r) {
+        if (!inArea(grid, l, r)) return 1;
+        if (grid[l][r] == 1) return 1;
+        if (grid[l][r] == 2) return 0;
+
+        grid[l][r] = 2;
+
+        return area(grid, l - 1, r)
+                + area(grid, l, r - 1)
+                + area(grid, l + 1, r)
+                + area(grid, l, r + 1);
+    }
+
+    private boolean inArea(int[][] grid, int l, int r) {
+        return 0 <= l && l < grid.length
+                && 0 <= r && r < grid[0].length;
     }
 }

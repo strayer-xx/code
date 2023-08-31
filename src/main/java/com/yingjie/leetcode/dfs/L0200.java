@@ -16,7 +16,33 @@ public class L0200 {
     /**
      * 题解：<a href="https://leetcode.cn/problems/number-of-islands/solutions/211211/dao-yu-lei-wen-ti-de-tong-yong-jie-fa-dfs-bian-li-/">...</a>
      */
-    // public int numIslands(char[][] grid) {
-    //
-    // }
+    public int numIslands(char[][] grid) {
+        int count = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == '1') {
+                    area(grid, i, j);
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    private void area(char[][] grid, int l, int r) {
+        if (!inArea(grid, l, r)) return;
+        if (grid[l][r] == '0') return;
+
+        grid[l][r] = '0';
+
+        area(grid, l - 1, r);
+        area(grid, l, r - 1);
+        area(grid, l + 1, r);
+        area(grid, l, r + 1);
+    }
+
+    private boolean inArea(char[][] grid, int l, int r) {
+        return 0 <= l && l < grid.length
+                && 0 <= r && r < grid[0].length;
+    }
 }

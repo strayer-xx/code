@@ -19,4 +19,31 @@ package com.yingjie.leetcode.dp;
  * Next: {@link L0309}
  */
 public class L0188 {
+
+    public static void main(String[] args) {
+        new L0188().maxProfit(2, new int[]{2,1,4,5,2,9,7});
+    }
+
+    public int maxProfit(int k, int[] prices) {
+        int len = prices.length;
+        int kLen = 2 * k;
+        int max = 0;
+        int[][] dp = new int[len - 1][kLen];
+        for (int i = 0; i < kLen; i++) {
+            dp[0][i] = (i % 2) == 0 ? -prices[0] : 0;
+        }
+        for (int i = 1; i < len; i++) {
+            for (int j = 0; j < kLen; j++) {
+                if (j == 0) {
+                    dp[i][j] = -prices[i];
+                } else if (j % 2 == 1){
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - 1] + prices[i]);
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - 1] - prices[i]);
+                }
+                max = Math.max(max, dp[i][j]);
+            }
+        }
+        return max;
+    }
 }
