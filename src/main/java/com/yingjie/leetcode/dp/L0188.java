@@ -28,14 +28,14 @@ public class L0188 {
         int len = prices.length;
         int kLen = 2 * k;
         int max = 0;
-        int[][] dp = new int[len - 1][kLen];
+        int[][] dp = new int[len][kLen];
         for (int i = 0; i < kLen; i++) {
             dp[0][i] = (i % 2) == 0 ? -prices[0] : 0;
         }
         for (int i = 1; i < len; i++) {
             for (int j = 0; j < kLen; j++) {
                 if (j == 0) {
-                    dp[i][j] = -prices[i];
+                    dp[i][j] = Math.max(dp[i - 1][j], -prices[i]);
                 } else if (j % 2 == 1){
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - 1] + prices[i]);
                 } else {
