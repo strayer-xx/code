@@ -1,6 +1,7 @@
 package com.yingjie.algorithm;
 
 import java.util.Arrays;
+import java.util.Enumeration;
 
 /**
  * <p>Title: QuickSort</p>
@@ -12,7 +13,7 @@ import java.util.Arrays;
  */
 public class QuickSort {
     public static void quickSort(int[] nums, int left, int right){
-        int i, j, t, temp;
+        int i, j, temp;
         if(left >= right) {
             return;
         }
@@ -28,7 +29,7 @@ public class QuickSort {
                 i++;
             }
             if(i < j) {
-                t = nums[i];
+                int t = nums[i];
                 nums[i] = nums[j];
                 nums[j] = t;
             }
