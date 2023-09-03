@@ -1,8 +1,6 @@
 package com.yingjie.leetcode.permutation;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * <p>Title: L0078</p>
@@ -32,5 +30,28 @@ public class L0078 {
         traceback(cur + 1, nums);
         path.remove(path.size() - 1);
         traceback(cur + 1, nums);
+    }
+
+    public List<List<Integer>> subsetsDFS(int[] nums) {
+        dfs(0, nums, true, new ArrayList<>());
+        dfs(0, nums, false, new ArrayList<>());
+        return result;
+    }
+
+    public void dfs(int cur, int[] nums, boolean flag, List<Integer> list) {
+
+        if (flag) {
+            list.add(nums[cur]);
+        }
+        if (cur == nums.length - 1) {
+            result.add(list);
+            return;
+        }
+        dfs(cur + 1, nums, false, new ArrayList<>(list));
+        dfs(cur + 1, nums, true, new ArrayList<>(list));
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new L0078().subsets(new int[]{1,2,3}));
     }
 }
