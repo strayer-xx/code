@@ -31,16 +31,14 @@ public class M080008 {
         // 排序是为了后面的剪枝
         Arrays.sort(sChar);
 
-        dfs(0);
+        traceback();
         return res.toArray(new String[0]);
     }
 
-    /**
-     * @param depth 当前树的深度
-     */
-    private void dfs(int depth) {
+
+    private void traceback() {
         // 到达叶子结点
-        if (depth == sChar.length) {
+        if (path.length() == sChar.length) {
             res.add(path.toString());
             return;
         }
@@ -52,13 +50,14 @@ public class M080008 {
                 // i == 0直接添加
                 // sChar[i] ！= sChar[i-1] 直接添加
                 // used[i-1] == true 直接添加
+                // 要避免重复，那就要保证相同数字的相对位置不能变，例如î 1 2，必须要保证î永远在1前面，否则就会出现重复。
                 if (i > 0 && sChar[i] == sChar[i-1] && !used[i-1]) {
                     continue;
                 }
                 path.append(sChar[i]);
                 used[i] = true;
-                dfs(depth + 1);
-                path.deleteCharAt(depth);
+                traceback();
+                path.deleteCharAt(path.length() - 1);
                 used[i] = false;
             }
         }
