@@ -20,6 +20,8 @@ public class M080007 {
 
     private List<String> list = new ArrayList<>();
 
+    private StringBuilder path = new StringBuilder();
+
     private char[] chars;
 
     private boolean[] used;
@@ -27,24 +29,24 @@ public class M080007 {
     public String[] permutation(String S) {
         chars = S.toCharArray();
         used = new boolean[S.length()];
-        dfs(new StringBuilder());
+        traceBack();
         return list.toArray(new String[0]);
     }
 
-    private void dfs(StringBuilder sb) {
-        if (sb.length() == chars.length) {
-            list.add(sb.toString());
+
+    private void traceBack() {
+        if (path.length() == chars.length) {
+            list.add(path.toString());
             return;
         }
         for (int i = 0; i < chars.length; i++) {
             if (!used[i]) {
-                sb.append(chars[i]);
+                path.append(chars[i]);
                 used[i] = true;
-                dfs(sb);
+                traceBack();
+                path.deleteCharAt(path.length() - 1);
                 used[i] = false;
-                sb.deleteCharAt(sb.length() - 1);
             }
-
         }
     }
 }
