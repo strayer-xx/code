@@ -12,6 +12,8 @@ package com.yingjie.leetcode.dfs;
  * 格子是边长为 1 的正方形。网格为长方形，且宽度和高度均不超过 100 。计算这个岛屿的周长。
  *
  * <a href="https://leetcode.cn/problems/island-perimeter/">...</a>
+ *
+ * Next: {@link L0695}
  */
 public class L0463 {
 
