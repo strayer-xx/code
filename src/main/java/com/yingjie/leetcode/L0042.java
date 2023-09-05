@@ -2,11 +2,11 @@ package com.yingjie.leetcode;
 
 /**
  * <p>Title: L0042</p>
- * <p>Description: 接水滴</p>
+ * <p>Description: 42. 接雨水</p>
  *
- * @author LiuYingJie
- * @version 1.0
- * @date 2022/4/17 12:26
+ * 给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
+ *
+ * <a href="https://leetcode.cn/problems/trapping-rain-water/">...</a>
  */
 public class L0042 {
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class L0042 {
 
     /**
      * 动态规划
-     * 解题要点：设发f(i)为i处的储水量，那么f(i) = Min(left_max - right_max) - height[i]
+     * 解题要点：设发f(i)为i处的储水量，那么f(i) = Min(left_max, right_max) - height[i]
      * left_max: i左处的最大值
      * right_maxL i右处的最大值
      */
