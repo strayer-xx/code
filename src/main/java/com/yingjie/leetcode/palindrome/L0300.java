@@ -1,4 +1,4 @@
-package com.yingjie.leetcode.dp;
+package com.yingjie.leetcode.palindrome;
 
 
 /**
@@ -13,6 +13,10 @@ package com.yingjie.leetcode.dp;
  * 输入：nums = [10,9,2,5,3,7,101,18]
  * 输出：4
  * 解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。
+ *
+ * <a href="https://leetcode.cn/problems/longest-increasing-subsequence/">...</a>
+ *
+ * Next: {@link com.yingjie.nowcoder.HJ0024}
  */
 public class L0300 {
 
@@ -27,8 +31,7 @@ public class L0300 {
         int[] dp = new int[len];
         // ans 为什么初始化为1而不是0
         int ans = 1;
-        dp[0] = 1;
-        for (int i = 1; i < len; i++) {
+        for (int i = 0; i < len; i++) {
             // dp[i] = 1 很关键
             dp[i] = 1;
             for (int j = 0; j < i; j++) {

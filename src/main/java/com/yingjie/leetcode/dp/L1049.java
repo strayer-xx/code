@@ -19,7 +19,7 @@ public class L1049 {
     }
 
     /**
-     * dp[i][j]代表从[0,i]区间内。找出比target小的最大方案
+     * dp[i][j]代表从[0,i]区间内。找出比 j 小的最大和
      */
     public int lastStoneWeightII(int[] stones) {
         int n = stones.length;

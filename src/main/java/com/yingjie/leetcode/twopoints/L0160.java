@@ -1,12 +1,11 @@
-package com.yingjie.leetcode;
+package com.yingjie.leetcode.twopoints;
 
 /**
  * <p>Title: L160</p>
- * <p>Description: </p>
+ * <p>Description: 160. 相交链表</p>
  *
- * @author LiuYingJie
- * @version 1.0
- * @date 2022/12/1 1:29
+ * 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。
+ * 如果两个链表不存在相交节点，返回 null 。
  */
 public class L0160 {
 

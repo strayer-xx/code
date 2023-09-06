@@ -22,7 +22,7 @@ import java.util.Scanner;
  * 要求编程序找出从左上角到右下角的路线。入口点为[0,0],既第一格是可以走的路。
  *
  */
-public class L0043 {
+public class HJ0043 {
 
     private static List<int[]> result = new ArrayList<>();
 
@@ -59,7 +59,6 @@ public class L0043 {
             for (int[] pos : result) {
                 System.out.println("(" + pos[0] + "," + pos[1] + ")");
             }
-
             return;
         }
 
