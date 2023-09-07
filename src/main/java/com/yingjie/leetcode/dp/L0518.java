@@ -23,15 +23,18 @@ import java.util.Arrays;
  */
 public class L0518 {
 
+    public static void main(String[] args) {
+        System.out.println(new L0518().change(11, new int[]{2,3,5}));
+    }
+
     public int change(int amount, int[] coins) {
         if(coins.length == 0)
             return 0;
 
-        //dp[j]代表当钱包的总价值为j时，
+        //dp[j]代表当钱包的总价值为j时，组合数
         int[] dp = new int[amount + 1];
         dp[0] = 1;
 
-        //i代表可以使用的硬币索引，i=2代表只在第0个，第1个，第2个这三个硬币中选择硬币
         for (int coin : coins) {
             for (int j = coin; j <= amount; j++) {
                 if (dp[j - coin] != 0) {
