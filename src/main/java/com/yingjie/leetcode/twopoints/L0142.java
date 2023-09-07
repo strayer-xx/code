@@ -13,4 +13,43 @@ package com.yingjie.leetcode.twopoints;
  * <a href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">...</a>
  */
 public class L0142 {
+    
+    public ListNode detectCycle(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null) {
+            slow = slow.next;
+            if (fast.next != null) {
+                fast = fast.next.next;
+            } else {
+                return null;
+            }
+            if (fast == slow) {
+                break;
+            }
+        }
+        if (fast == slow) {
+            fast = head;
+            while (fast != slow) {
+                fast = fast.next;
+                slow = slow.next;
+            }
+            return slow;
+        } else {
+            return null;
+        }
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+    
 }

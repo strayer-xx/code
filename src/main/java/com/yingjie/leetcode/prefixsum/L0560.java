@@ -1,4 +1,4 @@
-package com.yingjie.leetcode;
+package com.yingjie.leetcode.prefixsum;
 
 import java.util.HashMap;
 import java.util.Map;
