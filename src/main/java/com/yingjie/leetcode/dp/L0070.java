@@ -1,4 +1,4 @@
-package com.yingjie.leetcode;
+package com.yingjie.leetcode.dp;
 
 /**
  * <p>Title: L0070</p>

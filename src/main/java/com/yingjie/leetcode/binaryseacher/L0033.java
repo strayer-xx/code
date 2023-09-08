@@ -1,4 +1,4 @@
-package com.yingjie.leetcode;
+package com.yingjie.leetcode.binaryseacher;
 
 /**
  * <p>Title: L0033</p>

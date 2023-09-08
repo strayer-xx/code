@@ -26,24 +26,19 @@ public class L0128 {
         Set<Integer> numSet = Arrays.stream(nums)
                 .boxed()
                 .collect(Collectors.toSet());
-        List<Integer> l = Arrays.stream(nums)
-                .boxed()
-                .collect(Collectors.toList());
         int longest = 0;
-        int cur;
+        int len;
         for (Integer num : numSet) {
-            cur = 1;
+            len = 1;
             // 剪枝，要不然会超时
             if (numSet.contains(num - 1)) {
                 continue;
             }
             while (numSet.contains(num + 1)) {
                 num++;
-                cur++;
+                len++;
             }
-            if (longest < cur) {
-                longest = cur;
-            }
+            longest = Math.max(longest, len);
         }
         return longest;
     }
