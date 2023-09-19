@@ -25,7 +25,8 @@ public class L0198 {
     }
 
     /**
-     * dp
+     * dp[i][0] 在第i个时，不偷的最大值
+     * dp[i][1] 在第i个时，偷的最大值
      */
     public int rob(int[] nums) {
         int[][] dp = new int[nums.length][2];
@@ -39,7 +40,7 @@ public class L0198 {
     }
 
     /**
-     *
+     *  将问题类比上楼梯，一次可以上一阶或两阶（重要）
      */
     public int rob2(int[] nums) {
         if (nums == null || nums.length == 0) {

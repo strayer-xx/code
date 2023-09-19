@@ -1,7 +1,5 @@
 package com.yingjie.leetcode.dp;
 
-import sun.reflect.generics.tree.Tree;
-
 /**
  * <p>Title: L0337</p>
  * <p>Description: 337. 打家劫舍 III</p>
@@ -11,6 +9,8 @@ import sun.reflect.generics.tree.Tree;
  * 如果 两个直接相连的房子在同一天晚上被打劫 ，房屋将自动报警。
  *
  * 给定二叉树的 root 。返回 在不触动警报的情况下 ，小偷能够盗取的最高金额 。
+ *
+ * <a href="https://leetcode.cn/problems/house-robber-iii/">...</a>
  */
 public class L0337 {
 
@@ -23,17 +23,10 @@ public class L0337 {
 
 
     /**
-     * dfs
+     * dfs 如何确定结束的边界？
      */
     public int rob2(TreeNode root) {
         return 1;
-    }
-
-    private void dfs(TreeNode root, int preStat) {
-        if (root == null) {
-            return;
-        }
-
     }
 
 
