@@ -32,7 +32,7 @@ public class L0463 {
 
     private int area(int[][] grid, int l, int r) {
         if (!inArea(grid, l, r)) return 1;
-        if (grid[l][r] == 1) return 1;
+        if (grid[l][r] == 0) return 1;
         if (grid[l][r] == 2) return 0;
 
         grid[l][r] = 2;

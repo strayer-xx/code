@@ -25,7 +25,7 @@ public class L0015 {
             //因为已经是有序的，所以当前值大于0则后面不可能再有和为0的情况出现
             if(nums[i] > 0) break;
             if(i > 0 && nums[i] == nums[i-1]) continue;
-            int left = i+1, right = nums.length - 1;
+            int left = i + 1, right = nums.length - 1;
             while(left < right){
                 int num = nums[i] + nums[left] + nums[right];
                 // 得到想要的结果的同时，去重
