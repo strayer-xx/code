@@ -1,5 +1,8 @@
 package com.yingjie.leetcode.dp;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <p>Title: L0337</p>
  * <p>Description: 337. 打家劫舍 III</p>
@@ -13,20 +16,29 @@ package com.yingjie.leetcode.dp;
  * <a href="https://leetcode.cn/problems/house-robber-iii/">...</a>
  */
 public class L0337 {
+    // 选择节点
+    private Map<TreeNode, Integer> f = new HashMap<>();
+    // 不选择节点
+    private Map<TreeNode, Integer> g = new HashMap<>();
 
     /**
      * dp
      */
     public int rob(TreeNode root) {
-        return 0;
+        dfs(root);
+        return Math.max(f.getOrDefault(root, 0), g.getOrDefault(root, 0));
     }
 
 
-    /**
-     * dfs 如何确定结束的边界？
-     */
-    public int rob2(TreeNode root) {
-        return 1;
+    public void dfs(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        dfs(root.left);
+        dfs(root.right);
+        f.put(root, g.getOrDefault(root.left, 0) + g.getOrDefault(root.right, 0) + root.val);
+        g.put(root, Math.max(f.getOrDefault(root.left, 0), g.getOrDefault(root.left, 0))
+                + Math.max(f.getOrDefault(root.right, 0), g.getOrDefault(root.right, 0)));
     }
 
 

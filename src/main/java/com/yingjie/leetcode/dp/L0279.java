@@ -1,5 +1,6 @@
 package com.yingjie.leetcode.dp;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
@@ -22,6 +23,7 @@ public class L0279 {
         Arrays.fill(dp, Integer.MAX_VALUE);
         dp[0] = 0;
         dp[1] = 1;
+        // 为什么要这样内外层循环？
         for (int i = 2; i <= n; i++) {
             for (int j = 1; j * j <= i; j++) {
                 dp[i] = Math.min(dp[i], dp[i - j * j] + 1);

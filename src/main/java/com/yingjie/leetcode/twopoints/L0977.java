@@ -2,11 +2,11 @@ package com.yingjie.leetcode.twopoints;
 
 /**
  * <p>Title: L0977</p>
- * <p>Description: </p>
+ * <p>Description: 977. 有序数组的平方 </p>
  *
- * @author LiuYingJie
- * @version 1.0
- * @date 2022/11/27 17:20
+ * 给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
+ *
+ * <a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">...</a>
  */
 public class L0977 {
 
