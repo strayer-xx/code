@@ -21,13 +21,31 @@ import java.util.Arrays;
 public class L0376 {
 
     public static void main(String[] args) {
-        new L0376().wiggleMaxLength(new int[]{1,17,5,10,13,15,10,5,16,8});
+        new L0376().wiggleMaxLength(new int[]{1,1,1,3,3,3,4,5});
     }
 
+    /**
+     * 直接计算转折点，注意计算转折点的方法
+     */
     public int wiggleMaxLength(int[] nums) {
+        if (nums.length < 2) {
+            return nums.length;
+        }
+        int count = 0;
+        int preDiff = nums[1] - nums[0];
+        int diff;
+        count = preDiff != 0 ? 2 : 1;
+        for (int i = 2; i < nums.length; i++) {
+            diff = nums[i] - nums[i - 1];
+            // 为什么prediff是 <= 而不是 <
+            if ((diff > 0 && preDiff <= 0) ||
+                    (diff < 0 && preDiff >= 0)) {
+                preDiff = diff;
+                count++;
+            }
+        }
 
-        return 1;
-
+        return count;
     }
 
 }

@@ -7,7 +7,7 @@ import com.yingjie.leetcode.dp.*;
 import com.yingjie.leetcode.linkedlist.L0021;
 import com.yingjie.leetcode.permutation.L0046;
 import com.yingjie.leetcode.permutation.M080007;
-import com.yingjie.leetcode.traceback.L0022;
+import com.yingjie.leetcode.dfs.traceback.L0022;
 
 /**
  * <p>Title: Summary</p>
