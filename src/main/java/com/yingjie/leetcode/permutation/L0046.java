@@ -28,6 +28,7 @@ public class L0046 {
             return;
         }
         for (int num : nums) {
+            // 已经选了不能选
             if (item.contains(num)) {
                 continue;
             }

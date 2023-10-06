@@ -1,4 +1,4 @@
-package com.yingjie.leetcode.dp;
+package com.yingjie.leetcode.subsequence;
 
 
 /**
@@ -11,7 +11,8 @@ package com.yingjie.leetcode.dp;
  * 解释：长度最长的公共子数组是 [3,2,1] 。
  *
  * <a href="https://leetcode.cn/problems/maximum-length-of-repeated-subarray/">...</a>
- * {@link L1143}
+ *
+ * Next: {@link L1143}
  */
 public class L0718 {
 

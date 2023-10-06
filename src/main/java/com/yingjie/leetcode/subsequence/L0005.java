@@ -1,4 +1,4 @@
-package com.yingjie.leetcode.palindrome;
+package com.yingjie.leetcode.subsequence;
 
 /**
  * <p>Title: L0005</p>
@@ -10,6 +10,8 @@ package com.yingjie.leetcode.palindrome;
  * 输入：s = "babad"
  * 输出："bab"
  * 解释："aba" 同样是符合题意的答案。
+ *
+ * Next: {@link L0647}
  */
 public class L0005 {
 

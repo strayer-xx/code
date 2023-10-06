@@ -1,4 +1,4 @@
-package com.yingjie.leetcode.dp;
+package com.yingjie.leetcode.subsequence;
 
 
 /**

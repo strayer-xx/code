@@ -1,4 +1,4 @@
-package com.yingjie.leetcode.palindrome;
+package com.yingjie.leetcode.subsequence;
 
 /**
  * <p>Title: L0516</p>

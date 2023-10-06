@@ -1,4 +1,4 @@
-package com.yingjie.leetcode.palindrome;
+package com.yingjie.leetcode.subsequence;
 
 import java.util.Iterator;
 import java.util.Map;
