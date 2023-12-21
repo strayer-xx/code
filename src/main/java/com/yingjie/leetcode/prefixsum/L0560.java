@@ -48,6 +48,7 @@ public class L0560 {
         int count = 0;
         for (int num : nums) {
             pre += num;
+            // pre[i] − pre[j] = k
             if (prefixMap.containsKey(pre - k)) {
                 count += prefixMap.get(pre - k);
             }
