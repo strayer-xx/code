@@ -18,7 +18,7 @@ public class MinCommitter {
 
     private Set<Integer> committers = new HashSet<>();
 
-    private Integer result = 0;
+    private Integer result = Integer.MAX;
     public int minCommitter(int[][] files) {
         if (files.length == 0) {
             return 0;
