@@ -13,7 +13,8 @@ public class MinCommitter {
 
     public static void main(String[] args) {
         MinCommitter solution = new MinCommitter();
-        solution.minCommitter(new int[][]{{1,3},{2,1},{1,9,3}});
+        int result = solution.minCommitter(new int[][]{{1, 3}, {2, 1}, {1, 9, 3}});
+        System.out.println(result);
     }
 
     private Set<Integer> committers = new HashSet<>();
