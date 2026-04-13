@@ -8,38 +8,48 @@ import java.util.List;
  * 15. 三数之和
  * 给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i != j、i != k 且 j != k ，
  * 同时还满足 nums[i] + nums[j] + nums[k] == 0 。请
- *
+ * <p>
  * 你返回所有和为 0 且不重复的三元组。
- *
+ * <p>
  * 注意：答案中不可以包含重复的三元组。
  *
  * <a href="https://leetcode.cn/problems/3sum/">...</a>
  */
 public class L0015 {
 
+    public static void main(String[] args) {
+        System.out.println(new L0015().threeSum(new int[] {-1, 0, 1, 2, -1, -4}));
+        System.out.println(new L0015().threeSum(new int[] {0, 0, 0}));
+        System.out.println(new L0015().threeSum(new int[] {0, 1, 1}));
+    }
+
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
 
-        for(int i = 0; i<nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             //因为已经是有序的，所以当前值大于0则后面不可能再有和为0的情况出现
-            if(nums[i] > 0) break;
-            if(i > 0 && nums[i] == nums[i-1]) continue;
+            if (nums[i] > 0) {
+                break;
+            }
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
             int left = i + 1, right = nums.length - 1;
-            while(left < right){
+            while (left < right) {
                 int num = nums[i] + nums[left] + nums[right];
-                // 得到想要的结果的同时，去重
-                if(num == 0){
-                    while(left < right && nums[right] == nums[right-1]) {
+                if (num == 0) {
+                    // 为什么要判断left < right？
+                    while (left < right && nums[right] == nums[right - 1]) {
                         right--;
                     }
-                    while(left < right && nums[left] == nums[left+1]) {
+                    while (left < right && nums[left] == nums[left + 1]) {
                         left++;
                     }
-                    res.add(Arrays.asList(nums[i],nums[left],nums[right]));
+                    res.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     right--;
                     left++;
-                } else if (num > 0){
+                } else if (num > 0) {
                     right--;
                 } else {
                     left++;
@@ -48,4 +58,5 @@ public class L0015 {
         }
         return res;
     }
+
 }
