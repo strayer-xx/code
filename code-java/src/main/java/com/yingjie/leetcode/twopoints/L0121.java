@@ -21,24 +21,16 @@ import com.yingjie.leetcode.dp.L0122;
 public class L0121 {
 
     public static void main(String[] args) {
-        System.out.println(new L0121().maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
+        System.out.println(new L0121().maxProfit(new int[] {7, 1, 5, 3, 6, 4}));
     }
 
     public int maxProfit(int[] prices) {
-        int min = 0;
+        int historyMin = Integer.MAX_VALUE;
         int max = 0;
-        int profit = 0;
         for (int i = 0; i < prices.length; i++) {
-            if (prices[i] < prices[min]) {
-                min = i;
-            }
-            if (prices[i] >= prices[min]) {
-                max = i;
-            }
-            if (min < max && profit < prices[max] - prices[min]) {
-                profit = prices[max] - prices[min];
-            }
+            historyMin = Math.min(historyMin, prices[i]);
+            max = Math.max(max, prices[i] - historyMin);
         }
-        return profit;
+        return max;
     }
 }
